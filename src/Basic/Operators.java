@@ -40,6 +40,24 @@ public class Operators {
         System.out.println(num >= 18 && is_true);       // Checks both condition must be satisfy (AND)
         System.out.println(num <= 18 || is_true);       // Checks any one condition must be satisfy (OR)
         System.out.println(!is_true);                   // NOT operator
+//        Ternary Operator
+        int num1 = 20;
+        int num2 = 3;
+        System.out.println(num1>num2 ? "Num1 is greater" : "num2 is greater");
+//        Bitwise Operator
+
+        int bit_1 = 5;
+        int bit_2 = 15;
+        System.out.println(bit_1 & bit_2);          // 0101 (AND) 1111 = 0101 -> 5
+        System.out.println(bit_1 | bit_2);          // 0101 (OR) 1111 = 1111 -> 15
+        System.out.println(bit_1 ^ bit_2);          // 0101 (XOR) 1111 = 1010 -> 10
+        System.out.println(~bit_1);
+//         00000000 00000000 00000000 00000101
+//                      (NOT)
+//         11111111 11111111 11111111 11111010          -> -6
+        System.out.println(bit_1);
+        System.out.println(bit_1<<2);               // (Left Shift by 2) 000000101 -> 00001010 -> 00010100 -> 16+4=20
+        System.out.println(bit_2>>2);               // (Right Shift by 2)  -> 00001111 -> 00000111 -> 00000011 -> 3
 
     }
 }
