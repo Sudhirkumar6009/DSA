@@ -18,5 +18,6 @@ public class Array_Create {
         for (Integer ar: arr2) {
             System.out.println(ar);
         }
+
     }
 }
