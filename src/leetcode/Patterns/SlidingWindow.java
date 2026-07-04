@@ -18,7 +18,7 @@ public class SlidingWindow {
     }
     public static void main(String[] args) {
         int[] arr = {3,8,2,5,7,6,12};
-        int window = 4;
+        int window = 2;
         System.out.println(max_sum(arr, window));
     }
 }
