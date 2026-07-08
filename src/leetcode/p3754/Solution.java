@@ -29,6 +29,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumAndMultiply(1000));
+        System.out.println(sumAndMultiply(10293));
     }
 }
