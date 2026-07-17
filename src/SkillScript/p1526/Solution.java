@@ -13,7 +13,7 @@ public class Solution {
             if (!stuck.contains(c)) {
                 res.append(c);
             } else {
-                if (res.length() == 0 || res.charAt(res.length() - 1) != c) {
+                if (res.isEmpty() || res.charAt(res.length() - 1) != c) {
                     res.append(c);
                 }
             }
