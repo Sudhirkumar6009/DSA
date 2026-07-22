@@ -13,7 +13,6 @@ public class Solution {
             char ch = s.charAt(i);
             map.put(ch, map.getOrDefault(ch, 0)+1);
         }
-        System.out.println(map);
 
         if (map.size() == 3) count++;
 
@@ -27,7 +26,6 @@ public class Solution {
             char right = s.charAt(i);
             map.put(right, map.getOrDefault(right, 0) + 1);
 
-            System.out.println(map);
             if (map.size() == 3) count++;
         }
         return count;
