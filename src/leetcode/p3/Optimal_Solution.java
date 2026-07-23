@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Optimal_Solution {
     public static int lengthOfLongestSubstring (String s) {
-        int max = Integer.MIN_VALUE;
+        int max = 0;
         int left = 0;
         HashSet<Character> hashSet = new HashSet<>();
         for (int right = 0; right < s.length(); right++) {
