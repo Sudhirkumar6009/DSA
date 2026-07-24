@@ -1,18 +1,28 @@
 package leetcode.p424;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Solution {
     public static int characterReplacement(String s, int k) {
-        for (int left = 0; left < s.length(); left++) {
-            HashMap<Character, Integer> hashMap = new HashMap<>();
-            for (int right = left; right < s.length(); right++) {
-                hashMap.put(s.charAt(right), hashMap.getOrDefault(s.charAt(right), 0)+1);
-                System.out.println(hashMap);
+        int left = 0;
+        int maxFreq = 0;
+        int ans = 0;
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+
+            hashMap.put(c, hashMap.getOrDefault(c,0)+1);
+            maxFreq = Math.max(maxFreq, hashMap.get(c));
+
+            while ((right - left + 1) - maxFreq > k) {
+                char leftChar = s.charAt(left);
+                hashMap.put(leftChar, hashMap.get(leftChar) - 1);
+                left++;
             }
+            ans = Math.max(ans, right - left + 1);
+            System.out.println(hashMap);
         }
-        return 0;
+        return ans;
     }
 
     public static void main(String[] args) {
