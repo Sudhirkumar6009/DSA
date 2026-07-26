@@ -14,5 +14,8 @@ public class ArrayDeques {
         deque.addLast(30);
 
         System.out.println(deque);
+
+//        Adding elements on ArrayQueue
+
     }
 }
