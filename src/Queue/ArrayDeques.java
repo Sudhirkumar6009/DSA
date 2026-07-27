@@ -42,5 +42,24 @@ public class ArrayDeques {
             itr.hasNext();) {
             System.out.print(itr.next() + " ");
         }
+        System.out.println();
+
+//        Using ArrayDeque as Stack
+
+        System.out.println("----------");
+        Deque<Integer> array_deque  = new ArrayDeque<>();
+
+        array_deque.push(12);
+        array_deque.push(1);
+        array_deque.push(12);
+        array_deque.push(102);
+
+        System.out.println("Array Deque : "+array_deque);
+
+        System.out.println("Popping each element as Stack (LIFO) -> ");
+        while(!array_deque.isEmpty()) {
+            System.out.print("Popped element : "+ array_deque.pop()+" \n");
+        }
+
     }
 }
