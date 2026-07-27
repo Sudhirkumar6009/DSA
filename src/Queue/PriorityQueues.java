@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class PriorityQueues {
     public static void main(String[] args) {
-        PriorityQueue<Integer> pq = new PriorityQueue();
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
 //        Adding elements on Priority Queue
 
@@ -13,6 +13,8 @@ public class PriorityQueues {
         pq.add(7);
         pq.add(1);
         pq.add(2);
+
+        System.out.println("Elements of Priority Queue : "+pq);
 
         System.out.println("Heapified Priority Queue : " + pq); // Follows Binary Heap method to append
 
