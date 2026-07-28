@@ -176,7 +176,7 @@ public class SinglyLinkedList {
             slow = slow.next;
             fast = fast.next.next;
         }
-        System.out.println("Middle Element : "+slow.data);
+        System.out.println("Middle Element : " + slow.data);
     }
     public static void main(String[] args) {
 
