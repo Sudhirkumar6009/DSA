@@ -33,6 +33,6 @@ public class Solution {
         node3.next = node4;
         node4.next = node5;
 
-        System.out.println(middleNode(node1));
+        System.out.println(middleNode(node1).val);
     }
 }

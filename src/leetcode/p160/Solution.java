@@ -10,7 +10,39 @@ public class Solution {
         }
     }
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        
+        if (headA == null || headB == null) return null;
+
+        ListNode ptrA = headA;
+        ListNode ptrB = headB;
+
+        int lenA = 0;
+        int lenB = 0;
+
+        while (ptrA != null) {
+            lenA++;
+            ptrA = ptrA.next;
+        }
+        while (ptrB != null) {
+            lenB++;
+            ptrB = ptrB.next;
+        }
+
+        ptrA = headA;
+        ptrB = headB;
+
+        while (lenA > lenB) {
+            lenA--;
+            ptrA = ptrA.next;
+        }
+        while (lenA < lenB) {
+            lenB--;
+            ptrB = ptrB.next;
+        }
+        while (ptrA != ptrB) {
+            ptrA = ptrA.next;
+            ptrB = ptrB.next;
+        }
+        return ptrA;
     }
 
     public static void main(String[] args) {
@@ -32,6 +64,6 @@ public class Solution {
         nodeC1.next = nodeC2;
         nodeC2.next = nodeC3;
 
-        System.out.println(getIntersectionNode(nodeA1, nodeB1));
+        System.out.println(getIntersectionNode(nodeA1, nodeB1).val);
     }
 }
