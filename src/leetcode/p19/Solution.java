@@ -17,6 +17,7 @@ public class Solution {
             slow = slow.next;
             fast = fast.next.next;
         }
+//        condition for removing Nth node after slow pointer
         return head;
     }
 
