@@ -1,6 +1,6 @@
 package leetcode.Patterns;
 
-public class LinkedListInPlaceTraversal {
+public class LinkedListInPlaceReversal {
     static class ListNode {
         int val;
         ListNode next;
