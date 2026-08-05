@@ -5,12 +5,8 @@ import java.util.HashMap;
 public class TCS_placement_coding {
     static void returnDict(String str) {
         HashMap<Character, Integer> hashMap = new HashMap<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (hashMap.containsKey(str.charAt(i))) {
-                hashMap.put(str.charAt(i), hashMap.get(str.charAt(i))+1);
-            } else {
-                hashMap.put(str.charAt(i), 1);
-            }
+        for (char ch : str.toCharArray()) {
+            hashMap.put(ch, hashMap.getOrDefault(ch, 0)+1);
         }
         System.out.println(hashMap);
 
