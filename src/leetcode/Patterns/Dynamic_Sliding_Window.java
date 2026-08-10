@@ -5,7 +5,6 @@ public class Dynamic_Sliding_Window {
         int left = 0;
         int sum = 0;
         int minLen = Integer.MAX_VALUE;
-        System.out.println(minLen);
 
         for (int right = 0; right < n; right++) {
             sum += arr[right];
