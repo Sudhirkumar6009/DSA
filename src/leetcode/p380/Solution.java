@@ -38,6 +38,7 @@ public class Solution {
 
         return true;
     }
-    public static int getRandom() {
+
+    public static void main(String[] args) {
     }
 }
