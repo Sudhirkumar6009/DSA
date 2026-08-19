@@ -1,5 +1,7 @@
 package tcs;
 
+import java.util.Scanner;
+
 public class Palindrome_Number {
     public static void palindrome(int num) {
         if (num < 0) {
