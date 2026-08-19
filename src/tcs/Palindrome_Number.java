@@ -1,19 +1,26 @@
 package tcs;
 
 public class Palindrome_Number {
-    public static boolean isPalindrome(int x) {
-        if (x < 0 || (x % 10 == 0 && x != 0)) {
-            return false;
+    public static void palindrome(int num) {
+        if (num < 0) {
+            System.out.print("Not Possible");
+            return;
         }
-        int half = 0;
-        while (x > half) {
-            half = (half * 10) + (x % 10);
-            x /= 10;
+        int originalNum = num;
+        int reversedNum = 0;
+
+        while (num != 0) {
+            int lastDigit = num%10;
+            reversedNum = (reversedNum * 10) + lastDigit;
+            num /= 10;
         }
-        return x == half || x == half / 10;
+        if (originalNum == reversedNum) System.out.print("Palindrome");
+        else System.out.print("Not Palindrome");
+
     }
     public static void main (String args[]) {
-        int x = 121;
-        System.out.println(isPalindrome(x));
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        palindrome(num);
     }
 }
