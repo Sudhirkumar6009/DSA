@@ -6,16 +6,18 @@ import java.util.Scanner;
 public class Missing_No_Array {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        int[] arr = new int[n-1];
-        for (int i = 0; i < n-1; i++) {
-            arr[i] = scan.nextInt();
+        int n = Integer.parseInt(scan.nextLine());
+        String num = scan.nextLine();
+        String[] tokens = num.split(", ");
+        int[] arr = new int[tokens.length];
+        for (int i = 0; i < tokens.length; i++) {
+            arr[i] = Integer.parseInt(tokens[i]);
         }
         Arrays.sort(arr);
-        for (int i = 0; i < n-2; i++) {
-            if (arr[i]+1 != arr[i+1]) {
-                System.out.println(arr[i]+1);
-            }
+        int range = (n*(n+1))/2;
+        for (int i = 0; i < arr.length; i++) {
+            range -= arr[i];
         }
+        System.out.println(range);
     }
 }
