@@ -14,7 +14,7 @@ public class Merging_Intervals {
             vals[i][0] = Integer.parseInt(num_extr[0]);
             vals[i][1] = Integer.parseInt(num_extr[1]);
         }
-        Arrays.sort(vals, (a, b) -> Integer.compare(a[0], b[0]));
+        Arrays.sort(vals, (a, b) -> Integer.compare(a[0], b[0])); // Most important
         int start = vals[0][0];
         int end = vals[0][1];
         for (int i = 1; i < vals.length; i++) {
