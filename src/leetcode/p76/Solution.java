@@ -4,20 +4,34 @@ import java.util.HashMap;
 
 public class Solution {
     public static String minWindow(String s, String t) {
-        String ans = "";
         HashMap<Character,Integer> hashMap = new HashMap<>();
-        for (char ch : t.toCharArray()) {
+        HashMap<Character,Integer> window = new HashMap<>();
+        for (char ch: t.toCharArray()) {
             hashMap.put(ch, hashMap.getOrDefault(ch, 0)+1);
         }
         int left = 0;
+        int minLen = Integer.MAX_VALUE;
+        int start = 0;
+        int count = 0;
         for (int right = 0; right < s.length(); right++) {
-            if (hashMap.containsKey(s.charAt(right))) {
-                left = right;
-                hashMap.replace(s.charAt(right), hashMap.getOrDefault(s.charAt(right),0)-1);
+            char c = s.charAt(right);
+            window.put(c,window.getOrDefault(c,0)+1);
+            if (hashMap.containsKey(c) && window.get(c) <= hashMap.get(c)) count++;
+            while (count == t.length()) {
+                if (right-left+1 < minLen) {
+                    minLen = right - left + 1;
+                    start = left;
+                }
+                char leftChar = s.charAt(left);
+                window.put(leftChar, window.get(leftChar)-1);
+                if (hashMap.containsKey(leftChar) && window.get(leftChar) < hashMap.get(leftChar)) count--;
+                left++;
             }
         }
-        System.out.println(hashMap);
-        return "";
+        if (minLen == Integer.MAX_VALUE) {
+            return "";
+        }
+        return s.substring(start, start + minLen);
     }
 
     public static void main(String[] args) {
