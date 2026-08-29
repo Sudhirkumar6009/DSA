@@ -2,13 +2,24 @@ package leetcode.p49;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Solution {
     public static List<List<String>> groupAnagrams (String[] str) {
-        List<List<String>> list = new ArrayList<>();
+        HashMap<String, List<String>> hashMap = new HashMap<>();
+        for (String s : str) {
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
 
-        return list;
+            if (!hashMap.containsKey(key)) {
+                hashMap.put(key, new ArrayList<>());
+            }
+            hashMap.get(key).add(s);
+        }
+        return new ArrayList<>(hashMap.values());
     }
 
     public static void main(String[] args) {
