@@ -1,4 +1,4 @@
-package leetcode.p3903;
+package leetcode.p3904;
 
 public class Solution {
     public static int firstStableIndex(int[] nums, int k) {
