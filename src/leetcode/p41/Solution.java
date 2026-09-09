@@ -1,30 +1,27 @@
 package leetcode.p41;
 
-import java.util.Arrays;
-
 public class Solution {
     public static int firstMissingPositive(int[] nums) {
-        int max = 0;
-        for (int n : nums) max = Math.max(max,n);
-        int[] arr = new int[max];
-        int i = 0;
-        for (int j = 0; j < nums.length; j++) arr[j] = nums[j];
-        while (i < nums.length) {
-            if (arr[i] < 0) {
-                i++; continue;
-            }
-            int correctIdx = arr[i] - 1;
-            if (arr[i] != arr[correctIdx]) {
-                int temp = arr[i];
-                arr[i] = arr[correctIdx];
-                arr[correctIdx] = temp;
-            } else {
-                i++;
-            }
-
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0) nums[i] = 0;
         }
-        for (int k = 0; k < arr.length; k++) {
-            if (arr[k] == 0) {
+        int j = 0;
+        while (j < nums.length) {
+            if (nums[j] < 1 || nums[j] > nums.length) {
+                j++;
+                continue;
+            }
+            int correctIdx = nums[j] - 1;
+            if (nums[j] != nums[correctIdx]) {
+                int temp = nums[j];
+                nums[j] = nums[correctIdx];
+                nums[correctIdx] = temp;
+            } else {
+                j++;
+            }
+        }
+        for (int k = 0; k < nums.length; k++) {
+            if (nums[k] != k+1) {
                 return k+1;
             }
         }
@@ -32,7 +29,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3,4,9,1};
+        int[] nums = {7,8,9,11,12};
         System.out.println(firstMissingPositive(nums));
     }
 }
