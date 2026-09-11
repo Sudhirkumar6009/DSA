@@ -1,3 +1,6 @@
+We can simply get answer with Recursive method through n%2 as values of 1,
+and closing value as n == 0 as base condition upto n/2 recursive rounds.
+
 
 Division -> Divisor -> Remainder
 --------    -------    ---------
