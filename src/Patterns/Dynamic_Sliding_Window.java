@@ -1,4 +1,4 @@
-package leetcode.Patterns;
+package Patterns;
 
 public class Dynamic_Sliding_Window {
     public static int minLength(int arr[], int n, int k) {

@@ -1,4 +1,4 @@
-package leetcode.Patterns;
+package Patterns;
 
 import java.util.Arrays;
 public class Prefix_Sum {

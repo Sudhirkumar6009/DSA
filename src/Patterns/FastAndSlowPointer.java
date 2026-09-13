@@ -1,4 +1,4 @@
-package leetcode.Patterns;
+package Patterns;
 
 public class FastAndSlowPointer {
     static class ListNode {

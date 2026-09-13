@@ -1,4 +1,4 @@
-package leetcode.Patterns;
+package Patterns;
 
 public class SlidingWindow {
     static int max_sum(int[] arr, int window) {
