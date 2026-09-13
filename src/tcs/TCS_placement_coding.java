@@ -1,4 +1,4 @@
-package leetcode;
+package tcs;
 
 import java.util.HashMap;
 
