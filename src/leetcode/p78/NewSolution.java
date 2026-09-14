@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewSolution {
-    public static List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> subsets = new ArrayList<>();
+    public static List<List<Character>> subsets(char[] nums) {
+        List<List<Character>> subsets = new ArrayList<>();
         for (int mask = 0; mask < (1 << nums.length); mask++) {
-        List<Integer> list = new ArrayList<>();
+        List<Character> list = new ArrayList<>();
             for (int i = 0; i < nums.length; i++) {
                 if ((mask & (1 << i)) != 0) {
                     list.add(nums[i]);
@@ -19,7 +19,7 @@ public class NewSolution {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3};
+        char[] nums = {'a','b','c'};
         System.out.println(subsets(nums));
     }
 }
